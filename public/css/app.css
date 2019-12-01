@@ -1,4 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap);@charset "UTF-8";
+
+@font-face {
+  font-family: "Mistral";
+  src: url(/fonts/Mistral.eot?eb5b410feacc1be5b8dd95d63cbd5644);
+  src: url(/fonts/Mistral.eot?eb5b410feacc1be5b8dd95d63cbd5644) format("embedded-opentype"), url(/fonts/Mistral.woff2?f2f5b928de588f609ba86b079dd5a5cd) format("woff2"), url(/fonts/Mistral.woff?d0352ffdc32d5040a1bf6b61c6556559) format("woff"), url(/fonts/Mistral.ttf?313e8035ec44be52820273f0ea487893) format("truetype"), url(/fonts/Mistral.svg?37e2d6a6f1515a7df7fc7595df488994) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -34,7 +42,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Open Sans", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +74,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6714,7 +6722,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6839,7 +6847,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -11354,5 +11362,10 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.drive-font {
+  font-family: "Mistral";
+  color: #f4007a;
 }
 
