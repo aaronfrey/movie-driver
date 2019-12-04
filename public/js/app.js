@@ -1906,10 +1906,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      showReleaseDateRange: false
+      showReleaseDateRange: false,
+      ratings: []
     };
   },
   methods: {
@@ -37369,79 +37394,83 @@ var render = function() {
     _c("hr"),
     _vm._v(" "),
     _c("form", [
-      _c(
-        "div",
-        { staticClass: "d-flex justify-content-between align-items-end" },
-        [
-          _c("h2", [_vm._v("Release Year")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "custom-control custom-switch" }, [
-            _c("input", {
-              staticClass: "custom-control-input",
-              attrs: { type: "checkbox", id: "release-year-range" },
-              on: {
-                click: function($event) {
-                  return _vm.toggleReleaseDateRange()
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "custom-control-label",
-                attrs: { for: "release-year-range" }
-              },
-              [_vm._v("Search Release Range")]
-            )
-          ])
-        ]
-      ),
+      _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "form-row" }, [
-        _c("div", { staticClass: "form-group col-md-4" }, [
-          _c("label", { attrs: { for: "release-year" } }, [
-            _vm._v("Release Year")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control form-control-lg",
-            attrs: {
-              type: "text",
-              id: "release-year",
-              disabled: _vm.showReleaseDateRange
-            }
-          })
-        ]),
+      _c("section", [
+        _c(
+          "div",
+          { staticClass: "d-flex justify-content-between align-items-end" },
+          [
+            _c("h2", [_vm._v("Release Year")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "custom-control custom-switch" }, [
+              _c("input", {
+                staticClass: "custom-control-input",
+                attrs: { type: "checkbox", id: "release-year-range" },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleReleaseDateRange()
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "custom-control-label",
+                  attrs: { for: "release-year-range" }
+                },
+                [_vm._v("Search Release Range")]
+              )
+            ])
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group col-md-4" }, [
-          _c("label", { attrs: { for: "release-year-min" } }, [
-            _vm._v("Release Year GTE")
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-group col-md-4" }, [
+            _c("label", { attrs: { for: "release-year" } }, [
+              _vm._v("Release Year")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-lg",
+              attrs: {
+                type: "text",
+                id: "release-year",
+                disabled: _vm.showReleaseDateRange
+              }
+            })
           ]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control form-control-lg",
-            attrs: {
-              type: "text",
-              id: "release-year-min",
-              disabled: !_vm.showReleaseDateRange
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group col-md-4" }, [
-          _c("label", { attrs: { for: "release-year-max" } }, [
-            _vm._v("Release Year LTE")
+          _c("div", { staticClass: "form-group col-md-4" }, [
+            _c("label", { attrs: { for: "release-year-min" } }, [
+              _vm._v("Release Year GTE")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-lg",
+              attrs: {
+                type: "text",
+                id: "release-year-min",
+                disabled: !_vm.showReleaseDateRange
+              }
+            })
           ]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control form-control-lg",
-            attrs: {
-              type: "text",
-              id: "release-year-max",
-              disabled: !_vm.showReleaseDateRange
-            }
-          })
+          _c("div", { staticClass: "form-group col-md-4" }, [
+            _c("label", { attrs: { for: "release-year-max" } }, [
+              _vm._v("Release Year LTE")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-lg",
+              attrs: {
+                type: "text",
+                id: "release-year-max",
+                disabled: !_vm.showReleaseDateRange
+              }
+            })
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -37453,7 +37482,43 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", [
+      _c("h2", [_vm._v("Rating")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "rating" } }, [_vm._v("Rating")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "custom-select custom-select-lg",
+                attrs: { id: "rating" }
+              },
+              [
+                _c("option", { attrs: { value: "ALL", selected: "" } }, [
+                  _vm._v("All Ratings")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "1" } }, [_vm._v("One")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "2" } }, [_vm._v("Two")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "3" } }, [_vm._v("Three")])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -49872,8 +49937,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Projects\movie-driver\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Projects\movie-driver\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\projects\movie-driver\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\projects\movie-driver\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
