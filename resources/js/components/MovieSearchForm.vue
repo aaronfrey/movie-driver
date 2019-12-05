@@ -12,9 +12,9 @@
                             <label for="rating">Rating</label>
                             <select class="custom-select custom-select-lg" id="rating">
                                 <option value="ALL" selected>All Ratings</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option v-for="rating in this.ratings" :key="rating.id" :value="rating.rating">
+                                    {{ rating.rating }}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -61,17 +61,26 @@
     export default {
         data: function() {
             return {
-                showReleaseDateRange: false,
                 ratings: [],
+                showReleaseDateRange: false
             }
         },
         methods: {
+            getRatings: function() {
+                axios.get('/api/ratings')
+                    .then(res => {
+                        this.ratings = res.data;
+                    }).catch(err => {
+                    console.log(err);
+                });
+            },
             toggleReleaseDateRange: function() {
                 this.showReleaseDateRange = !this.showReleaseDateRange;
             }
         },
         mounted() {
-            console.log('Movie Search Form mounted.')
+            console.log('Movie Search Form mounted.');
+            this.getRatings();
         }
     }
 </script>

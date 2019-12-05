@@ -1933,17 +1933,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      showReleaseDateRange: false,
-      ratings: []
+      ratings: [],
+      showReleaseDateRange: false
     };
   },
   methods: {
+    getRatings: function getRatings() {
+      var _this = this;
+
+      axios.get('/api/ratings').then(function (res) {
+        _this.ratings = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
     toggleReleaseDateRange: function toggleReleaseDateRange() {
       this.showReleaseDateRange = !this.showReleaseDateRange;
     }
   },
   mounted: function mounted() {
     console.log('Movie Search Form mounted.');
+    this.getRatings();
   }
 });
 
@@ -37394,7 +37404,45 @@ var render = function() {
     _c("hr"),
     _vm._v(" "),
     _c("form", [
-      _vm._m(0),
+      _c("section", [
+        _c("h2", [_vm._v("Rating")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "rating" } }, [_vm._v("Rating")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  staticClass: "custom-select custom-select-lg",
+                  attrs: { id: "rating" }
+                },
+                [
+                  _c("option", { attrs: { value: "ALL", selected: "" } }, [
+                    _vm._v("All Ratings")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(this.ratings, function(rating) {
+                    return _c(
+                      "option",
+                      { key: rating.id, domProps: { value: rating.rating } },
+                      [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(rating.rating) +
+                            "\n                            "
+                        )
+                      ]
+                    )
+                  })
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("section", [
         _c(
@@ -37482,43 +37530,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", [
-      _c("h2", [_vm._v("Rating")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "rating" } }, [_vm._v("Rating")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "custom-select custom-select-lg",
-                attrs: { id: "rating" }
-              },
-              [
-                _c("option", { attrs: { value: "ALL", selected: "" } }, [
-                  _vm._v("All Ratings")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "1" } }, [_vm._v("One")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Two")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "3" } }, [_vm._v("Three")])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
