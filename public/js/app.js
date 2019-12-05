@@ -1951,9 +1951,11 @@ __webpack_require__.r(__webpack_exports__);
       this.showReleaseDateRange = !this.showReleaseDateRange;
     }
   },
+  created: function created() {
+    this.getRatings();
+  },
   mounted: function mounted() {
     console.log('Movie Search Form mounted.');
-    this.getRatings();
   }
 });
 

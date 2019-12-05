@@ -66,21 +66,22 @@
             }
         },
         methods: {
-            getRatings: function() {
-                axios.get('/api/ratings')
-                    .then(res => {
-                        this.ratings = res.data;
-                    }).catch(err => {
+            getRatings() {
+                axios.get('/api/ratings').then(res => {
+                    this.ratings = res.data;
+                }).catch(err => {
                     console.log(err);
                 });
             },
-            toggleReleaseDateRange: function() {
+            toggleReleaseDateRange() {
                 this.showReleaseDateRange = !this.showReleaseDateRange;
             }
         },
+        created() {
+            this.getRatings();
+        },
         mounted() {
             console.log('Movie Search Form mounted.');
-            this.getRatings();
         }
     }
 </script>
