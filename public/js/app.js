@@ -1930,10 +1930,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       ratings: [],
+      selectedRating: 'ALL',
       showReleaseDateRange: false
     };
   },
@@ -37409,29 +37416,79 @@ var render = function() {
       _c("section", [
         _c("h2", [_vm._v("Rating")]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col" }, [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "rating" } }, [_vm._v("Rating")]),
-              _vm._v(" "),
               _c(
-                "select",
-                {
-                  staticClass: "custom-select custom-select-lg",
-                  attrs: { id: "rating" }
-                },
+                "div",
+                { staticClass: "btn-group btn-group-lg btn-group-toggle" },
                 [
-                  _c("option", { attrs: { value: "ALL", selected: "" } }, [
-                    _vm._v("All Ratings")
-                  ]),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "btn btn-info",
+                      class: { active: _vm.selectedRating === "ALL" }
+                    },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.selectedRating,
+                            expression: "selectedRating"
+                          }
+                        ],
+                        attrs: {
+                          type: "radio",
+                          value: "ALL",
+                          autocomplete: "off",
+                          checked: ""
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.selectedRating, "ALL")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.selectedRating = "ALL"
+                          }
+                        }
+                      }),
+                      _vm._v(" All\n                            ")
+                    ]
+                  ),
                   _vm._v(" "),
                   _vm._l(this.ratings, function(rating) {
                     return _c(
-                      "option",
-                      { key: rating.id, domProps: { value: rating.rating } },
+                      "label",
+                      {
+                        key: rating.id,
+                        staticClass: "btn btn-info",
+                        class: { active: _vm.selectedRating === rating }
+                      },
                       [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.selectedRating,
+                              expression: "selectedRating"
+                            }
+                          ],
+                          attrs: { type: "radio", autocomplete: "off" },
+                          domProps: {
+                            value: rating,
+                            checked: _vm._q(_vm.selectedRating, rating)
+                          },
+                          on: {
+                            change: function($event) {
+                              _vm.selectedRating = rating
+                            }
+                          }
+                        }),
                         _vm._v(
-                          "\n                                " +
+                          " " +
                             _vm._s(rating.rating) +
                             "\n                            "
                         )
@@ -37441,6 +37498,12 @@ var render = function() {
                 ],
                 2
               )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "alert alert-info" }, [
+              _vm.selectedRating !== "ALL"
+                ? _c("span", [_vm._v(_vm._s(_vm.selectedRating.description))])
+                : _c("span", [_vm._v("Search will include all movie ratings.")])
             ])
           ])
         ])
@@ -49951,8 +50014,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\projects\movie-driver\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\projects\movie-driver\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Projects\movie-driver\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Projects\movie-driver\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

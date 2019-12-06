@@ -6,16 +6,22 @@
 
             <section>
                 <h2>Rating</h2>
-                <div class="row">
-                    <div class="col-md-4">
+                <div class="form-row">
+                    <div class="col">
                         <div class="form-group">
-                            <label for="rating">Rating</label>
-                            <select class="custom-select custom-select-lg" id="rating">
-                                <option value="ALL" selected>All Ratings</option>
-                                <option v-for="rating in this.ratings" :key="rating.id" :value="rating.rating">
-                                    {{ rating.rating }}
-                                </option>
-                            </select>
+                            <div class="btn-group btn-group-lg btn-group-toggle">
+                                <label class="btn btn-info" :class="{ active: selectedRating === 'ALL' }">
+                                    <input type="radio" value="ALL" v-model="selectedRating" autocomplete="off" checked> All
+                                </label>
+                                <label v-for="rating in this.ratings" :key="rating.id"
+                                    class="btn btn-info" :class="{ active: selectedRating === rating }">
+                                    <input type="radio" :value="rating" v-model="selectedRating" autocomplete="off"> {{ rating.rating }}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="alert alert-info">
+                            <span v-if="selectedRating !== 'ALL'">{{ selectedRating.description }}</span>
+                            <span v-else>Search will include all movie ratings.</span>
                         </div>
                     </div>
                 </div>
@@ -62,6 +68,7 @@
         data: function() {
             return {
                 ratings: [],
+                selectedRating: 'ALL',
                 showReleaseDateRange: false
             }
         },
