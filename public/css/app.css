@@ -11366,47 +11366,61 @@ a.text-dark:focus {
 
 .drive-font {
   font-family: "Mistral";
-  color: #f4007a;
+  color: #e60073;
 }
 
 .btn-drive {
   color: #fff;
-  background-color: #f4007a;
-  border-color: #f4007a;
+  background-color: #e60073;
+  border-color: #e60073;
 }
 
 .btn-drive:hover {
   color: #fff;
-  background-color: #ce0067;
-  border-color: #c10061;
+  background-color: #c00060;
+  border-color: #b3005a;
 }
 
 .btn-drive:focus,
 .btn-drive.focus {
   color: #fff;
-  background-color: #ce0067;
-  border-color: #c10061;
-  box-shadow: 0 0 0 0.2rem rgba(246, 38, 142, 0.5);
+  background-color: #c00060;
+  border-color: #b3005a;
+  box-shadow: 0 0 0 0.2rem rgba(234, 38, 136, 0.5);
 }
 
 .btn-drive.disabled,
 .btn-drive:disabled {
   color: #fff;
-  background-color: #f4007a;
-  border-color: #f4007a;
+  background-color: #e60073;
+  border-color: #e60073;
 }
 
 .btn-drive:not(:disabled):not(.disabled):active,
 .btn-drive:not(:disabled):not(.disabled).active,
 .show > .btn-drive.dropdown-toggle {
   color: #fff;
-  background-color: #c10061;
-  border-color: #b4005a;
+  background-color: #b3005a;
+  border-color: #a60053;
 }
 
 .btn-drive:not(:disabled):not(.disabled):active:focus,
 .btn-drive:not(:disabled):not(.disabled).active:focus,
 .show > .btn-drive.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(246, 38, 142, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(234, 38, 136, 0.5);
+}
+
+.alert-drive {
+  color: #fff;
+  background-color: #e60073;
+  border-color: #cd0066;
+}
+
+.alert-drive hr {
+  border-top-color: #b3005a;
+}
+
+.alert-drive .alert-link {
+  color: #e6e6e6;
 }
 

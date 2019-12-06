@@ -19,12 +19,18 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Global
+// Fonts
 .drive-font {
     font-family: 'Mistral';
     color: $drive-pink;
 }
 
+// Buttons
 .btn-drive {
     @include button-variant($drive-pink, $drive-pink);
+}
+
+// Alerts
+.alert-drive {
+    @include alert-variant($drive-pink, darken($drive-pink, 5%), #fff);
 }

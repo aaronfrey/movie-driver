@@ -19,7 +19,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="alert alert-info">
+                        <div class="alert alert-drive">
                             <span v-if="selectedRating !== 'ALL'">{{ selectedRating.description }}</span>
                             <span v-else>Search will include all movie ratings.</span>
                         </div>

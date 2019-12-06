@@ -37500,7 +37500,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "alert alert-info" }, [
+            _c("div", { staticClass: "alert alert-drive" }, [
               _vm.selectedRating !== "ALL"
                 ? _c("span", [_vm._v(_vm._s(_vm.selectedRating.description))])
                 : _c("span", [_vm._v("Search will include all movie ratings.")])
