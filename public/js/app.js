@@ -37426,7 +37426,7 @@ var render = function() {
                   _c(
                     "label",
                     {
-                      staticClass: "btn btn-info",
+                      staticClass: "btn btn-drive",
                       class: { active: _vm.selectedRating === "ALL" }
                     },
                     [
@@ -37463,7 +37463,7 @@ var render = function() {
                       "label",
                       {
                         key: rating.id,
-                        staticClass: "btn btn-info",
+                        staticClass: "btn btn-drive",
                         class: { active: _vm.selectedRating === rating }
                       },
                       [
@@ -37589,7 +37589,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "button",
-        { staticClass: "btn btn-lg btn-primary", attrs: { type: "submit" } },
+        { staticClass: "btn btn-lg btn-drive", attrs: { type: "submit" } },
         [_vm._v("Submit")]
       )
     ])

@@ -10,11 +10,11 @@
                     <div class="col">
                         <div class="form-group">
                             <div class="btn-group btn-group-lg btn-group-toggle">
-                                <label class="btn btn-info" :class="{ active: selectedRating === 'ALL' }">
+                                <label class="btn btn-drive" :class="{ active: selectedRating === 'ALL' }">
                                     <input type="radio" value="ALL" v-model="selectedRating" autocomplete="off" checked> All
                                 </label>
                                 <label v-for="rating in this.ratings" :key="rating.id"
-                                    class="btn btn-info" :class="{ active: selectedRating === rating }">
+                                    class="btn btn-drive" :class="{ active: selectedRating === rating }">
                                     <input type="radio" :value="rating" v-model="selectedRating" autocomplete="off"> {{ rating.rating }}
                                 </label>
                             </div>
@@ -55,7 +55,7 @@
                 </div>
             </section>
 
-            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+            <button type="submit" class="btn btn-lg btn-drive">Submit</button>
 
         </form>
 

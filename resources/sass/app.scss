@@ -24,3 +24,7 @@
     font-family: 'Mistral';
     color: $drive-pink;
 }
+
+.btn-drive {
+    @include button-variant($drive-pink, $drive-pink);
+}
